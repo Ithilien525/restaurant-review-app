@@ -25,7 +25,6 @@ let urlsToCache = [
  * Install service worker
  */
 self.addEventListener('install', event => {
-    console.log('Service worker caching');
 	event.waitUntil(
 		caches.open(staticCacheName).then(cache => {
             return cache.addAll(urlsToCache);
@@ -34,7 +33,6 @@ self.addEventListener('install', event => {
         })
     );
 });
-
 
 /**
  * Activate service worker
@@ -53,7 +51,6 @@ self.addEventListener('activate', event => {
         })
     );
 });
-
 
 /**
  * Fetch offline content
