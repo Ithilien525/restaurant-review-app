@@ -1,13 +1,12 @@
 let staticCacheName = 'restaurant-cache';
 let urlsToCache = [
-  './',
+  '/',
   './index.html',
   './restaurant.html',
   './css/styles.css',
+  './js/dbhelper.js',
   './js/main.js',
   './js/restaurant_info.js',
-  './js/dbhelper.js',
-  './js/sw_registration.js',
   './data/restaurants.json',
   './img/1.jpg',
   './img/2.jpg',
@@ -21,17 +20,16 @@ let urlsToCache = [
   './img/10.jpg',
 ];
 
-/**
- * Install service worker
- */
 self.addEventListener('install', event => {
-	event.waitUntil(
-		caches.open(staticCacheName).then(cache => {
-            return cache.addAll(urlsToCache);
-        }).catch(error => {
-            console.log(error);
-        })
-    );
+
+    event.waitUntil(caches.open(staticCacheName)
+    .then(cache => {
+        return cache.addAll(urlsToCache);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+  );
 });
 
 /**
