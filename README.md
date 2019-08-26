@@ -3,15 +3,11 @@
 
 ## How to run the project
 
-- To run the project, download or clone the repository to your computer
-
-`$ git clone github.com/Ithilien525/restaurant-review-app/`
+- To run the project, download or clone the repository to your computer `$ git clone github.com/Ithilien525/restaurant-review-app/`
 
 - Download and install **python**
 - Open terminal and update project's directory
-- Initiate server 
-
-`python3 -m http.server`
+- Initiate server `python3 -m http.server`
 
 - Visit localhost **http://localhost:8000**
 
