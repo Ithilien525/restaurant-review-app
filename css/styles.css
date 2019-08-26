@@ -55,12 +55,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 #footer {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: #444;
   color: #fff;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
+  height: 64px;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
@@ -138,9 +140,10 @@ nav h1 a {
 .filter-options {
   display: flex;
   font-display: row;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   background-color: #3397DB;
   align-items: center;
 }
@@ -392,40 +395,53 @@ label {
 @media screen and (max-width: 1124px) {
   .inside {
     display: flex;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 725px) {
+
   .inside {
     display: flex;
-    width: 100%;
-  }
-
-  .inside header {
-    order: 0;
-    width: 100%;
-  }
-
-  header {
-    display: flex;
     flex-direction: column;
+    width: 100%;
   }
   
+  .inside header {
+    order:0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+  }
+
+  nav h1 {
+    margin: 0;
+  }
+
   header nav {
-    order: 0;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
   }
 
   header #breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     order: 1;
-    width: 100%;
-    padding: auto 0;
+    min-height: 50px;
+    padding: 0;
     text-align: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .inside #map-container {
     order: 2;
-    top: 120px;
+    top: 160px;
     position: relative;
     height: 300px;
     width: 100%;
@@ -435,24 +451,33 @@ label {
     order: 3;
     position: relative;
     width: 100%;
-    padding: 140px 8px 0 0;
+    padding: 36px 0 0 0;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 160px;
+  }
+
+  .inside #reviews-container {
+    order: 4;
+    width: 100%;
+    padding: 8px 0;
+    margin: auto;
   }
   
   #reviews-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-  }
-
-  #reviews-container {
     width: 100%;
+    margin-bottom: 60px;
   }
 
   #reviews-container h2 {
     text-align: center;
+  }
+
+  footer {
+    order: 5;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
